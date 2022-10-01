@@ -11,7 +11,7 @@ layout: default
 </head>
 
 <body>
-    <a href="/" class="backButton">← All Posts</a>
+    <a href='{{ "/" | relative_url }}/' class="backButton">← All Posts</a>
     <h1 style="margin-bottom: 5px;">{{ page.title }}</h1>
 
     <div class="subtext">{{ page.date | date: "%B %-d %Y" }}</div>
@@ -28,7 +28,7 @@ layout: default
 
 
     <div id="featuredImageContainer">
-        <img src="{{ page.featuredImage }}" alt="" id="featuredImage">
+        <img src="{{ page.featuredImage | relative_url }}" alt="" id="featuredImage">
     </div>
 
     <div class="subtext" style="margin-bottom: 40px; text-align: center;">

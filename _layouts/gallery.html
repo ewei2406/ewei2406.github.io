@@ -16,8 +16,6 @@ layout: customPost
     {% assign pagePath = page.path | split: "_posts/" %}
     {% assign filter = pagePath[1] | split: "." | first %}
 
-    PAGENAME:
-
     <h2 style="margin-top: 70px;">Related Photos</h2>
 
     <div id="galleryMasonry">
@@ -25,8 +23,8 @@ layout: customPost
         {% for image in image_files %}
         {% if image.path contains filter %}
         <div class="galleryImageWrapper">
-            <a href="{{ image.path }}">
-                <img class="galleryImage" src="{{ image.path }}" alt="image" />
+            <a href="{{ image.path | relative_url }}">
+                <img class="galleryImage" src="{{ image.path | relative_url }}" alt="image" />
             </a>
             <div class="galleryImageSubtitle">
                 {{ image.basename }}

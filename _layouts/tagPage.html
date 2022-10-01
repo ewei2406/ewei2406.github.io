@@ -4,7 +4,7 @@ layout: default
 
 <div class="snippets">
 
-    <a href="/" class="backButton">← All Posts</a>
+    <a href='{{ "/" | relative_url }}/' class="backButton">← All Posts</a>
 
     <h1 class="snippets-heading">Tagged with <a href="{{ relative }}" class="tag">{{ page.tag-name }}</a></h1>
 
@@ -17,7 +17,7 @@ layout: default
                 <span class="post-meta">{{ post.date | date: date_format }}</span>
 
                 <h3 style="margin-bottom: 0px;">
-                    <a class="post-link" href="{{ post.url | relative_url }}">
+                    <a class="post-link" href="{{ site.baseurl }}/{{ post.url }}">
                         {{ post.title | escape }}
                     </a>
                 </h3>
@@ -36,7 +36,7 @@ layout: default
 
             <a class="post-link" href="{{ post.url | relative_url }}">
                 <div class="featuredImageThumbnailContainer">
-                    <img src="{{ post.featuredImage }}" alt="">
+                    <img src="{{ site.baseurl }}/{{ post.featuredImage }}" alt="">
                 </div>
             </a>
 

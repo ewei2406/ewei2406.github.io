@@ -20,10 +20,10 @@ layout: default
             <div class="galleryImageSource galleryImageSubtitle" style="top: 5px; bottom: auto;">
                 {% assign pathArray = image.path | split: "/" %}
                 {% assign link = pathArray[2] | replace: "-", "/" %}
-                <a href="/{{ link }}">Original Post: {{ pathArray[2] | split: "-" | last }}</a>
+                <a href="{{ link | relative_url }}">Original Post: {{ pathArray[2] | split: "-" | last }}</a>
             </div>
-            <a href="{{ image.path }}">
-                <img class="galleryImage" src="{{ image.path }}" alt="image" />
+            <a href="{{ image.path | relative_url }}">
+                <img class="galleryImage" src="{{ image.path | relative_url }}" alt="image" />
             </a>
             <div class="galleryImageSubtitle">
                 {{ image.basename }}
