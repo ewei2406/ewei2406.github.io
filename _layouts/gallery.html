@@ -1,0 +1,41 @@
+---
+layout: customPost
+---
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+</head>
+
+<body>
+    {{ content }}
+
+    {% assign pagePath = page.path | split: "_posts/" %}
+    {% assign filter = pagePath[1] | split: "." | first %}
+
+    PAGENAME:
+
+    <h2 style="margin-top: 70px;">Related Photos</h2>
+
+    <div id="galleryMasonry">
+        {% assign image_files = site.static_files | where: "image", true %}
+        {% for image in image_files %}
+        {% if image.path contains filter %}
+        <div class="galleryImageWrapper">
+            <a href="{{ image.path }}">
+                <img class="galleryImage" src="{{ image.path }}" alt="image" />
+            </a>
+            <div class="galleryImageSubtitle">
+                {{ image.basename }}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>
