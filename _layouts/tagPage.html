@@ -4,9 +4,10 @@ layout: default
 
 <div class="snippets">
 
-    <a href='{{ "/" | relative_url }}/' class="backButton">← All Posts</a>
+    <a href='{{ "/" | relative_url }}' class="backButton">← All Posts</a>
 
-    <h1 class="snippets-heading">Tagged with <a href="{{ relative }}" class="tag">{{ page.tag-name }}</a></h1>
+    <h1 class="snippets-heading">Tagged with <a href="{{ relative }}" style="font-family: sans-serif;" class="tag">{{
+            page.tag-name }}</a></h1>
 
     <ul class="post-list">
         {% for post in site.posts %}
@@ -17,7 +18,7 @@ layout: default
                 <span class="post-meta">{{ post.date | date: date_format }}</span>
 
                 <h3 style="margin-bottom: 0px;">
-                    <a class="post-link" href="{{ site.baseurl }}/{{ post.url }}">
+                    <a class="post-link" href="{{ post.url | relative_url }}">
                         {{ post.title | escape }}
                     </a>
                 </h3>
@@ -36,7 +37,7 @@ layout: default
 
             <a class="post-link" href="{{ post.url | relative_url }}">
                 <div class="featuredImageThumbnailContainer">
-                    <img src="{{ site.baseurl }}/{{ post.featuredImage }}" alt="">
+                    <img src="{{ post.featuredImage | relative_url }}" alt="">
                 </div>
             </a>
 

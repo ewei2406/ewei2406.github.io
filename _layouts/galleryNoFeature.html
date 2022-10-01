@@ -13,20 +13,31 @@ layout: default
 <body>
     {{ content }}
 
+    {% assign image_files = site.static_files | where: "image", true %}
+    {% assign n = image_files | size %}
+    {% assign shuffled = image_files | sample: n %}
+
+    <h3 class="subtext">
+        {{ n }} photos <br>
+        Last updated {{ site.posts.first.date | date: "%B %-d, %Y" }}
+    </h3>
+
+    <br>
+
     <div id="galleryMasonry">
-        {% assign image_files = site.static_files | where: "image", true %}
-        {% for image in image_files %}
+
+        {% for image in shuffled %}
         <div class="galleryImageWrapper">
-            <div class="galleryImageSource galleryImageSubtitle" style="top: 5px; bottom: auto;">
-                {% assign pathArray = image.path | split: "/" %}
-                {% assign link = pathArray[2] | replace: "-", "/" %}
-                <a href="{{ link | relative_url }}">Original Post: {{ pathArray[2] | split: "-" | last }}</a>
+
+            <div class="galleryImageCropWrapper">
+                <a href="{{ image.path | relative_url }}">
+                    <img class="galleryImage" src="{{ image.path | relative_url }}" alt="image" />
+                </a>
             </div>
-            <a href="{{ image.path | relative_url }}">
-                <img class="galleryImage" src="{{ image.path | relative_url }}" alt="image" />
-            </a>
+            {% assign pathArray = image.path | split: "/" %}
+            {% assign link = pathArray[2] | replace: "-", "/" %}
             <div class="galleryImageSubtitle">
-                {{ image.basename }}
+                {{ image.basename }} - <a href="{{ link | relative_url }}">View Original Post</a>
             </div>
         </div>
         {% endfor %}

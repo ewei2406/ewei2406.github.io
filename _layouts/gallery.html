@@ -23,9 +23,11 @@ layout: customPost
         {% for image in image_files %}
         {% if image.path contains filter %}
         <div class="galleryImageWrapper">
-            <a href="{{ image.path | relative_url }}">
-                <img class="galleryImage" src="{{ image.path | relative_url }}" alt="image" />
-            </a>
+            <div class="galleryImageCropWrapper">
+                <a href="{{ image.path | relative_url }}">
+                    <img class="galleryImage" src="{{ image.path | relative_url }}" alt="image" />
+                </a>
+            </div>
             <div class="galleryImageSubtitle">
                 {{ image.basename }}
             </div>

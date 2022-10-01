@@ -11,8 +11,8 @@ layout: default
 </head>
 
 <body>
-    <a href='{{ "/" | relative_url }}/' class="backButton">← All Posts</a>
-    <h1 style="margin-bottom: 5px;">{{ page.title }}</h1>
+    <a href='{{ "/" | relative_url }}' class="backButton">← All Posts</a>
+    <h1 style="margin-bottom: 5px; font-family: serif; font-size: 3em;">{{ page.title }}</h1>
 
     <div class="subtext">{{ page.date | date: "%B %-d %Y" }}</div>
     <div class="subtext">{{ page.location }}</div>
