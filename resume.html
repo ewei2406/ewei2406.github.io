@@ -1,0 +1,267 @@
+---
+layout: default
+title: Resume
+permalink: /resume/
+---
+
+{% assign resume = site.data.resume %}
+
+<h1 id="resumeTitle">Edward Wei</h1>
+
+<div class="linetop">
+    <div></div>
+    <h2>Education</h2>
+</div>
+<div class="resumeGroupContainer">
+    {% assign educationSorted = resume.education | sort: "end" | reverse %}
+    {% for education in educationSorted %}
+
+    <div class="resumeGroupItem">
+        <div class="resumeImageContainer" style="
+                                    background: url('{{ education.thumbnail }}'); 
+                                    background-size: cover;
+                                ">
+        </div>
+
+        <div class="resumeItemContent">
+            <div class="resumeGroupItemHeader">
+                <div class="resumeItemDate">
+                    {{ education.start | date: "%B %Y" }} -
+                    {{ education.end | date: "%B %Y" }}
+                </div>
+                <h3>{{ education.name }}</h3>
+                <span>{{ education.location }}</span>
+            </div>
+            {% if education.degrees %}
+            <div class="resumeListContainer">
+                {% for item in education.degrees %}
+                <div class="resumeListItem">{{ item }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <ul>
+                <li>
+                    <div>GPA</div>
+                    <div>{{ education.gpa.value }} / {{ education.gpa.outof }}</div>
+                </li>
+
+                {% if education.honors %}
+                <li>
+                    <div>Honors </div>
+                    <div class="resumeListContainer">
+                        {% for item in education.honors %}
+                        <div class="resumeListItemSub">{{ item }}</div>
+                        {% endfor %}
+                    </div>
+                </li>
+                {% endif %}
+
+                {% if education.courses %}
+                <li>
+                    <div>Courses </div>
+                    <div class="resumeListContainer">
+                        {% for item in education.courses %}
+                        <div class="resumeListItemSub">{{ item }}</div>
+                        {% endfor %}
+                    </div>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="linebottom">
+    <div></div>
+</div>
+
+
+<div class="linetop">
+    <div></div>
+    <h2>Experience</h2>
+</div>
+<div class="resumeGroupContainer">
+    {% assign expSorted = resume.experience | sort: "end" | reverse %}
+    {% for experience in expSorted %}
+
+    <div class="resumeGroupItem">
+        <div class="resumeImageContainer" style="
+                                    background: url('{{ experience.thumbnail }}'); 
+                                    background-size: cover;
+                                ">
+        </div>
+
+        <div class="resumeItemContent">
+            <div class="resumeGroupItemHeader">
+                <div class="resumeItemDate">
+                    {{ experience.start | date: "%B %Y" }} -
+                    {% if experience.ispresent %}
+
+                    Present
+
+                    {% else %}
+
+                    {{ experience.end | date: "%B %Y" }}
+
+                    {% endif %}
+                </div>
+                <h3>{{ experience.organization }}</h3>
+                <span>{{ experience.location }}</span>
+            </div>
+            <div class="resumeListContainer">
+                <div class="resumeListItem">{{ experience.position }}</div>
+            </div>
+            <ul class="resumeExperienceBullets">
+                {% for item in experience.details %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="linebottom">
+    <div></div>
+</div>
+
+
+<div class="linetop">
+    <div></div>
+    <h2>Projects</h2>
+</div>
+<div class="resumeGroupContainer">
+    {% assign projectsSorted = resume.projects | sort: "date" | reverse %}
+    {% for project in projectsSorted %}
+
+    <div class="resumeGroupItem">
+        <div class="resumeImageContainer" style="
+                                    background-image: url('{{ project.thumbnail }}'); 
+                                    background-size: contain;
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                ">
+        </div>
+
+        <div class="resumeItemContent">
+            <div class="resumeGroupItemHeader">
+                <div class="resumeItemDate">
+                    {{ project.date | date: "%B %Y" }}
+                </div>
+                <h3>{{ project.title }}</h3>
+                <a href="{{ project.url }}">{{ project.url }}</a>
+            </div>
+            <ul class="resumeExperienceBullets">
+                {% for item in project.details %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="linebottom">
+    <div></div>
+</div>
+
+<div class="linetop">
+    <div></div>
+    <h2>Publications and Presentations</h2>
+</div>
+<div class="resumeGroupContainer">
+    {% assign ppSorted = resume.pp | sort: "date" | reverse %}
+    {% for pp in ppSorted %}
+
+    <div class="resumeGroupItem">
+        <div class="resumeImageContainer" style="
+                                    background-image: url('{{ pp.thumbnail }}'); 
+                                    background-size: contain;
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                ">
+        </div>
+
+        <div class="resumeItemContent">
+            <div class="resumeGroupItemHeader">
+                <div class="resumeItemDate">
+                    {{ pp.date | date: "%B %Y" }}
+                </div>
+                <h3>{{ pp.title }}</h3>
+                <span>{{ pp.type }}</span>
+            </div>
+            <div class="resumeListContainer">
+                <div class="resumeListItem">{{ pp.venue }}</div>
+            </div>
+            <ul>
+                <li>{{ pp.citation }}</li>
+                <li><a href="{{ pp.url }}">{{ pp.url }}</a></li>
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="linebottom">
+    <div></div>
+</div>
+
+
+<div class="linetop">
+    <div></div>
+    <h2>Skills and Certifications</h2>
+</div>
+<div class="resumeGroupContainer">
+    {% for skillGroup in resume.skills.groups %}
+    <div class="resumeGroupItem">
+        <div class="resumeImageContainer" style="border: none; background-color: transparent;">
+            <div class="resumeDot"></div>
+        </div>
+
+        <div class="resumeItemContent">
+            <div class="resumeGroupItemHeader">
+                <h3 class="skillHeader">{{ skillGroup.name }}</h3>
+            </div>
+            <div class="resumeListContainer">
+                {% for skill in skillGroup.skills %}
+                <div class="resumeListItemSub">
+                    {{ skill }}
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+<div class="linebottom">
+    <div></div>
+</div>
+
+
+<div class="linetop">
+    <div></div>
+    <h2>Awards</h2>
+</div>
+<div class="resumeGroupContainer">
+    {% assign awardsSorted = resume.awards | sort: "date" | reverse %}
+    {% for award in awardsSorted %}
+
+    <div class="resumeGroupItem">
+        <div class="resumeImageContainer" style="border: none; background-color: transparent;">
+            <div class="resumeDot"></div>
+        </div>
+
+        <div class="resumeItemContent">
+            <div class="resumeGroupItemHeader">
+                <div class="resumeItemDate">
+                    {{ award.date | date: "%B %Y" }}
+                </div>
+                <h3>{{ award.title }}</h3>
+                <span>{{ award.description }}</span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="linebottom">
+    <div></div>
+</div>

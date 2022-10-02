@@ -51,7 +51,8 @@ $on-laptop: 1000px !default;
 // Import partials.
 @import "minima/base",
 "minima/layout",
-"minima/syntax-highlighting"
+"minima/syntax-highlighting",
+"resume"
 ;
 
 #tagContainer {
@@ -78,8 +79,8 @@ $on-laptop: 1000px !default;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75px;
-    width: 75px;
+    height: 90px;
+    width: 90px;
     overflow: hidden;
     // border: 1px solid $grey-color-light;
     border-radius: 5px;
@@ -93,7 +94,8 @@ $on-laptop: 1000px !default;
 
 .postRow {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 30px;
     align-items: center;
 }
 
@@ -159,4 +161,17 @@ $on-laptop: 1000px !default;
 
 .galleryImageWrapper:hover>.galleryImageSubtitle {
     display: block;
+}
+
+.prevNext {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0px;
+}
+
+.prevNext>div {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }

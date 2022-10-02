@@ -20,12 +20,17 @@
 
 title: Edward Wei
 email: ewei2406@gmail.com
+emailalt: edwei@email.virginia.edu
+number: (541) 221-5816
 description: >- # this means to ignore newlines until "baseurl:"
-  Personal portfolio website for Edward Wei
+  Personal portfolio site created using Jekyll
 # baseurl: "/portfolio/" # the subpath of your site, e.g. /blog
 url: "https://ewei2406.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ewei2406
 github_username:  ewei2406
+facebook_username: ewei2406
+instagram_username: ewei2406
+linkedin_username: wei-edward
 
 # Build settings
 theme: minima

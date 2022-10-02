@@ -28,16 +28,18 @@ layout: default
 
         {% for image in shuffled %}
         <div class="galleryImageWrapper">
-
+            {% assign pathArray = image.path | split: "/" %}
+            {% assign link = pathArray[2] | replace: "-", "/" %}
             <div class="galleryImageCropWrapper">
-                <a href="{{ image.path | relative_url }}">
+                <a href="{{ link | relative_url }}">
                     <img class="galleryImage" src="{{ image.path | relative_url }}" alt="image" />
                 </a>
             </div>
-            {% assign pathArray = image.path | split: "/" %}
-            {% assign link = pathArray[2] | replace: "-", "/" %}
+
             <div class="galleryImageSubtitle">
-                {{ image.basename }} - <a href="{{ link | relative_url }}">View Original Post</a>
+                {{ image.basename }}
+                - View: <a href="{{ image.path | relative_url }}">Full</a>
+                | <a href="{{ link | relative_url }}">Post</a>
             </div>
         </div>
         {% endfor %}

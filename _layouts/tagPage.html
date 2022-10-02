@@ -9,10 +9,19 @@ layout: default
     <h1 class="snippets-heading">Tagged with <a href="{{ relative }}" style="font-family: sans-serif;" class="tag">{{
             page.tag-name }}</a></h1>
 
+    <br>
+
     <ul class="post-list">
         {% for post in site.posts %}
         {% if post.tags contains page.tag-name %}
         <li class="postRow">
+            <a class="post-link" href="{{ post.url | relative_url }}">
+                <div class="featuredImageThumbnailContainer">
+                    <img src="{{ post.featuredImage | relative_url }}" alt="">
+                </div>
+            </a>
+
+
             <div class="postRowTitleContainer">
                 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
                 <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -33,13 +42,6 @@ layout: default
                     {% endfor %}
                 </div>
             </div>
-
-
-            <a class="post-link" href="{{ post.url | relative_url }}">
-                <div class="featuredImageThumbnailContainer">
-                    <img src="{{ post.featuredImage | relative_url }}" alt="">
-                </div>
-            </a>
 
         </li>
         {% endif %}

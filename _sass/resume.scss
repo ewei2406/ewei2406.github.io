@@ -1,0 +1,178 @@
+$resumeIconBulletSize: 60px;
+
+.resumeGroupContainer {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    border-left: 1px solid $grey-color-light;
+    margin-left: $resumeIconBulletSize/2;
+
+    @include media-query($on-palm) {
+        border-left: none;
+        margin-left: 0;
+    }
+}
+
+.resumeGroupItem {
+    display: flex;
+    flex-direction: row;
+    gap: $resumeIconBulletSize / 2;
+}
+
+.resumeImageContainer {
+    width: $resumeIconBulletSize;
+    height: $resumeIconBulletSize;
+    border: 1px solid $grey-color-light;
+    border-radius: 100px;
+    background-color: $background-color;
+    margin-top: 10px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    margin-left: -$resumeIconBulletSize / 2;
+
+    @include media-query($on-palm) {
+        display: none;
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resumeGroupItemHeader {
+    display: flex;
+    flex-direction: column;
+}
+
+.resumeGroupItemHeader>h3 {
+    margin: 0px 0;
+    font-size: 1.4rem;
+}
+
+.resumeGroupItemHeader>span {
+    color: $grey-color;
+    font-size: $small-font-size;
+}
+
+.resumeItemDate {
+    color: $grey-color;
+    font-style: italic;
+}
+
+.resumeItemContent {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.resumeItemContent>ul {
+    list-style-type: none;
+    margin: 0;
+    margin-top: 5px;
+    padding: 0;
+    font-size: $small-font-size;
+}
+
+.resumeItemContent>ul>li {
+    margin-bottom: 10px;
+    color: $grey-color;
+    flex-grow: 0;
+}
+
+.resumeListItem {
+    border: 1px solid $grey-color;
+    border-radius: 5px;
+    padding: 1px 6px;
+    display: block;
+}
+
+.resumeListContainer {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.resumeListItemSub {
+    border: 1px solid $grey-color-light;
+
+    color: $grey-color;
+    border-radius: 5px;
+    padding: 1px 7px;
+    flex-grow: 0;
+    white-space: nowrap;
+}
+
+.linetop {
+    display: flex;
+    gap: $resumeIconBulletSize;
+    flex-direction: row;
+    margin-left: $resumeIconBulletSize/2;
+
+    @include media-query($on-palm) {
+        margin-left: 0;
+    }
+
+    margin-top: 50px;
+}
+
+.linetop>div {
+    width: 1px;
+    height: auto;
+    background-image: linear-gradient(0deg, $grey-color-light, $background-color);
+
+    @include media-query($on-palm) {
+        display: none;
+    }
+}
+
+.linetop>h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+.linebottom {
+    width: 1px;
+    height: 50px;
+    background-image: linear-gradient(180deg, $grey-color-light, $background-color);
+    margin-left: $resumeIconBulletSize/2;
+
+    @include media-query($on-palm) {
+        display: none;
+    }
+}
+
+#resumeTitle {
+    text-align: center;
+    font-size: 3.5em;
+    margin-bottom: 50px;
+}
+
+.resumeExperienceBullets>li {
+    margin-bottom: 4px !important;
+    list-style-type: disc;
+    margin-left: 20px !important;
+}
+
+.resumeSkills {
+    margin-left: $resumeIconBulletSize/2;
+
+    @include media-query($on-palm) {
+        margin-left: 0;
+    }
+}
+
+.resumeDot {
+    width: 11px;
+    height: 11px;
+    border-radius: 11px;
+    background-color: $background-color;
+    border: 1px solid $grey-color-light;
+    display: block;
+}
+
+.skillGroupContainer {
+    gap: 10px;
+}

@@ -1,0 +1,183 @@
+name: Edward Wei
+city: Charlottesville, VA 22903
+email: edwei@email.virginia.edu
+phone: 5412215816
+
+education:
+  - name: University of Virginia
+    location: Charlottesville, VA
+    thumbnail: https://media-exp1.licdn.com/dms/image/C4E0BAQHpPQR9nOzaxQ/company-logo_200_200/0/1662733242661?e=1672876800&v=beta&t=G0CY_RlIbawYWTnRaO7NtbHSXYYol1DgvXqbwQN7JcA
+    degrees: 
+      - B.S., Computer Science
+    start: 2021-08-01
+    end: 2025-05-01
+    gpa: 
+      value: 3.95
+      outof: 4.00
+    # honors: 
+    #   - Rodman Scholar
+    #   - Dean's List (Fall 21, Spring 22)
+    courses: 
+      - Data Structures & Algorithms I, II
+      - Software Development Essentials I
+      - Computer Systems & Organization I
+      - Discrete Mathematics I
+      - Linear Algebra
+      - Statistics
+      - Probability
+  - name: South Eugene High School
+    location: Eugene, OR
+    thumbnail: https://pbs.twimg.com/media/DUaZcnjUMAETD1j.png
+    degrees: 
+      - High School Diploma
+      - International Baccalaureate Diploma
+    start: 2017-09-01
+    end: 2021-05-01
+    gpa: 
+      value: 3.99
+      outof: 4.00
+    honors: 
+    courses: 
+
+experience:
+  - organization: UVA Human-Centric Data Mining Lab
+    location: Charlottesville, VA
+    position: Research Assistant
+    type: Part-time
+    thumbnail: https://media-exp1.licdn.com/dms/image/C4E0BAQHpPQR9nOzaxQ/company-logo_200_200/0/1662733242661?e=1672876800&v=beta&t=G0CY_RlIbawYWTnRaO7NtbHSXYYol1DgvXqbwQN7JcA
+    start: 2021-09-01
+    end: 9999-01-01
+    ispresent: true
+    details:
+      - Developed novel Graph Neural Network-targeted inference protection method utilizing gradient-based edge search
+      - Created unique Gradient Guidance sampling optimization to improve space complexity of methods (targeting GPU)
+      - Designed and conducted experiments using Bash scripting and Python (PyTorch)
+      - Created data visualizations and conducted analyses using R and various python libraries such as Matplotlib
+  - organization: Amazon Web Service (AWS)
+    location: Herndon, VA
+    position: Cloud Consultant Intern
+    type: 12 week internship
+    thumbnail: https://media-exp1.licdn.com/dms/image/C560BAQE_4UwvNNtNTQ/company-logo_200_200/0/1640205885683?e=1672876800&v=beta&t=2dMQcvdmozLED0Uycas2N2GhXDXh2YAYf2rE0blP82M
+    start: 2022-06-01
+    end: 2022-09-01
+    details:
+      - Produced a three-tier web-based AWS workflow auditing tool for a Fortune 500 company within a scrum team
+      - Owned refactor of backend from S3+Lambda to DynamoDB+Lambda to support better versioning using AWS CDK 
+      - Reduced client load time by more than 75% through implemented server-side filtering using Lambda 
+      - Increased application security by implementing proxy on CloudFront Behaviors to enforce CORS on API Gateway
+      - Led PDF and CSV report creation functionality in the React.js frontend
+  - organization: Food for Lane County (FFLC, Nonprofit)
+    location: Remote
+    position: Project lead
+    type: Term project
+    thumbnail: https://media-exp1.licdn.com/dms/image/C4D0BAQEOUMohUPhiNQ/company-logo_200_200/0/1519908254330?e=1672876800&v=beta&t=I4kqd-SZkzmgSsyUpcm9d1qitzUqrwSCXZyc8Q-kOUY
+    start: 2022-02-01
+    end: 2022-06-01
+    details:
+      - Managed a team of 4 to develop an analytics platform to identify gaps in the FFLC Partners’ food donation network
+      - Conducted bi-weekly stakeholder interviews with representatives of 9 FFLC partners to iterate design requirements
+      - Created React-Typescript frontend, used Node.js APIs on Salesforce Heroku platform and linked app to MongoDB
+      - Transferred final product to University of Oregon PhD students for further application improvements
+
+projects:
+  - title: ChatGame 3D
+    date: 2022-03-01
+    thumbnail: https://raw.githubusercontent.com/ewei2406/Chat-Game-3d/master/assets/FullLogo.png
+    url: https://github.com/ewei2406/Chat-Game-3d
+    details:
+      - Real-time chatting game in a virtual 3D environment inspired by my linear algebra class
+      - Used WebSockets with Node.js backend to support real-time interaction in the virtual world
+      - Implemented customizable 3D rendering engine and matrix algebra library in Typescript from scratch
+  - title: Tindify
+    date: 2022-04-01
+    thumbnail: https://github.com/ewei2406/Tindify/blob/main/assets/Icon.png?raw=true
+    url: https://github.com/ewei2406/Tindify
+    details:
+      - App where users “swipe” on audio previews of music tracks to get personalized recommendations, like a dating app
+      - Implemented Spotify authentication via OAuth API and utilized Spotify Music Recommendation API
+      - Created Node.js backend and implemented RESTful API with Express.js
+      - Deployed full-stack app (React-Typescript, Node.js) to Salesforce Heroku
+  - title: Froots Tower Defense
+    date: 2022-02-01
+    thumbnail: https://github.com/ewei2406/Froots/raw/main/assets/FullLogo.png
+    url: https://github.com/ewei2406/Froots
+    details:
+      - Retro-themed tower defense game with 8 unique towers, 6 tracks, 3 game modes, and 3 difficulties
+      - Hand-made sound effects, assets, and level designs
+      - Created game library from scratch in Typescript
+      - Implemented pixel-wise post-processing effects
+
+pp:
+  - type: Paper presentation
+    date: 2022-08-18
+    title: "Privacy Protection from GNN on a Per-Node Basis: Selective Learnability Lock"
+    venue: ACM SIGKDD-UC (Undergraduate Consortium) 2022
+    thumbnail: https://media-exp1.licdn.com/dms/image/C560BAQHZ5b8DCss_vQ/company-logo_200_200/0/1627327630630?e=2147483647&v=beta&t=EWYH_2k-PVtXubV5IzAsmL7JbFRbHdSY9H6ZJbzqQNY
+    citation: > 
+      Wei, E., Lin, L., Wang, H. (2022). Privacy Protection from GNN on a Per-Node Basis: Selective Learnability Lock. Presented at KDD-UC (Undergraduate Consortium) 2022: ACM SIGKDD Conference on Knowledge Discovery and Data Mining, Washington, DC
+    url: https://kdd.org/kdd2022/kdd-uc.html
+  - type: Publication
+    date: 2020-10-10
+    title: "Examining the effects of the COVID-19 lockdowns on reducing pollutant concentrations in US urban areas: evidence from Los Angeles, Seattle, and New York city"
+    venue: Wessex Institute Transactions on the Ecology and the Environment
+    thumbnail: https://media-exp1.licdn.com/dms/image/C5603AQG_qlsqDSO5LQ/profile-displayphoto-shrink_400_400/0/1530179484573?e=1670457600&v=beta&t=YOpR8EmILS576Dtvbp87Qbx-_NKgnKImnp93GdyzbVE
+    citation: > 
+      Wei, E. (2021). Examining the effects of the COVID-19 lockdowns on reducing pollutant concentrations in US urban areas: evidence from Los Angeles, Seattle, and New York city. Published in Wessex Institute Transactions on the Ecology and the Environment, pp565-575, Vol. 253, 2021
+    url: https://doi.org/10.2495/SC210461
+
+skills:
+  groups:
+    - name: Overall
+      skills:
+      - Cloud Computing
+      - Data Mining
+      - RESTful API
+      - Stakeholder Interview
+      - Full-stack Development
+    - name: Programming
+      skills:
+        - Python
+        - PyTorch
+        - Javascript
+        - Typescript
+        - React
+        - Node
+        - Java
+        - AWS CDK
+        - Git
+        - Bash
+        - C/C++
+        - R 
+        - x86-64
+    - name: AWS
+      skills:
+        - Lambda
+        - DynamoDB
+        - S3
+        - API Gateway
+        - CloudFront
+    - name: Software
+      skills:
+        - Illustrator
+        - After Effects
+        - Lightroom
+        - PhotoShop
+        - OnShape
+        - ArcGIS
+        - ArcMap
+    - name: Certifications
+      skills:
+        - AWS Certified Developer (Associate)
+        - AWS Certified Solutions Architect (Associate)
+        - AWS Certified Cloud Practicioner
+
+awards:
+  - title: University of Virginia Bicentennial Clement Song Scholarship
+    date: 2022-08-01
+    # description: nothing
+  - title: University of Virginia Dean's Summer 2022 Undergraduate Research Fellowship
+    date: 2022-06-01
+    # description: nothing
+  - title: "University of Virginia Entrepreneurship Cup: Concept Stage Winner"
+    date: 2021-11-01
+    # description: nothing

@@ -9,16 +9,20 @@ layout: default
 
     <br>
 
-    <div style="font-family: serif; font-size: 5em;">Filler Text</div>
+    <div style="font-family: serif; font-size: 5em;">Hello,</div>
 
-    Hi, my name is Eddie, and I'm a second year computer science student at the University of Virginia in
-    Charlottesville, VA.
-    My hometown is Eugene, OR and my interests include volleyball, 3D printing, piano, VALORANT, and photography (in no
-    particular order).
+    my name is Eddie, and I'm a second year computer science student at the University of Virginia in Charlottesville,
+    VA.
+    My hometown is Eugene, OR.
+    My interests include volleyball, 3D printing, piano, VALORANT, and amateur photography (in no particular order).
 
     <br><br>
 
-    {{ content }}
+    Quick links:
+    <ul>
+        <li><a href='{{ "/resume/" | relative_url }}'>View Photo Gallery →</a></li>
+        <li><a href='{{ "/resume/" | relative_url }}'>View Résumé →</a></li>
+    </ul>
 
     {%- if site.posts.size > 0 -%}
     <h1 class="post-list-heading">Posts</h1>
@@ -26,6 +30,14 @@ layout: default
 
         {%- for post in site.posts -%}
         <li class="postRow">
+
+            <a class="post-link" href="{{ post.url | relative_url }}">
+                <div class="featuredImageThumbnailContainer">
+                    <img src="{{ post.featuredImage | relative_url }}" alt="">
+                </div>
+            </a>
+
+
             <div class="postRowTitleContainer">
                 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
                 <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -47,16 +59,8 @@ layout: default
                 </div>
             </div>
 
-
-            <a class="post-link" href="{{ post.url | relative_url }}">
-                <div class="featuredImageThumbnailContainer">
-                    <img src="{{ post.featuredImage | relative_url }}" alt="">
-                </div>
-            </a>
-
         </li>
         {%- endfor -%}
-
     </ul>
 
     <!-- <p class="rss-subscribe">subscribe <a href="{{ " /feed.xml" | relative_url }}">via RSS</a></p> -->
