@@ -127,7 +127,7 @@ pp:
 
 skills:
   groups:
-    - name: Overall
+    - name: General
       skills:
       - Cloud Computing
       - Data Mining
