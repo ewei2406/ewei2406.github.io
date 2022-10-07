@@ -30,17 +30,30 @@ layout: default
         <div class="galleryImageWrapper">
             {% assign pathArray = image.path | split: "/" %}
             {% assign link = pathArray[2] | replace: "-", "/" %}
-            <div class="galleryImageCropWrapper">
-                <a href="{{ link | relative_url }}">
+            {% assign fullResImage = image.path | replace: "thumbnails", "photos" %}
+
+            <div class="galleryImageCropWrapper" style="position: relative;">
+                <a href="{{ fullResImage | relative_url }}">
+                    <div class="highResImage" style="
+                                    display: none;
+                                    background: url('{{ fullResImage | relative_url }}'); 
+                                    background-size: cover;
+                                    position: absolute;
+                                    left: 0;
+                                    right: 0;
+                                    top: 0;
+                                    bottom: 0;
+                                    ">
+                    </div>
                     <img class="galleryImage" src="{{ image.path | relative_url }}" alt="image" />
                 </a>
             </div>
-
             <div class="galleryImageSubtitle">
-                {{ image.basename }}
-                - View: <a href="{{ image.path | relative_url }}">Full</a>
+                View: <a href="{{ fullResImage | relative_url }}">Full</a>
                 | <a href="{{ link | relative_url }}">Post</a>
             </div>
+
+
         </div>
         {% endfor %}
     </div>

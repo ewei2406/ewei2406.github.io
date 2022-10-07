@@ -1,5 +1,5 @@
 ---
-layout: customPost
+layout: default
 ---
 
 <!doctype html>
@@ -11,6 +11,67 @@ layout: customPost
 </head>
 
 <body>
+
+    <a href='{{ "/" | relative_url }}' class="backButton">← All Posts</a>
+    <h1 style="margin-bottom: 5px; font-family: serif; font-size: 3em;">{{ page.title }}</h1>
+
+    <div class="subtext">{{ page.date | date: "%B %-d %Y" }}</div>
+    <div class="subtext">{{ page.location }}</div>
+
+    <div id="tagContainer" style="margin-bottom: 40px; margin-top: 15px;">
+        {% for tag in page.tags %}
+        {% assign tag_slug = tag | slugify: "raw" %}
+        <a class="tag" href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }} rel="category tag">
+            {{ tag }}
+        </a>
+        {% endfor %}
+    </div>
+
+
+    {% assign postName = page.path | split: '/' %}
+    {% assign postName = postName[1] | split: "." | first %}
+
+    {% assign lowRes = 'assets/' | append: postName | append: '/thumbnails/' | append: page.featuredImage | relative_url
+    %}
+    {% assign highRes = 'assets/' | append: postName | append: '/photos/' | append: page.featuredImage | relative_url %}
+
+    <div id="featuredImageContainer" style="position: relative;">
+        <a href="{{ highRes | relative_url }}">
+            <!-- <div id="featuredImage" style="
+                                background: url('{{ highRes }}'), url('{{ lowRes }}'); 
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                position: absolute;
+                                left: 0;
+                                right: 0;
+                                top: 0;
+                                bottom: 0;
+                                ">
+            </div> -->
+            <img src="{{ highRes | relative_url }}" alt="" id="featuredImage">
+        </a>
+    </div>
+
+    <div class="subtext" style="margin-bottom: 40px; text-align: center;">
+        {{ page.featuredImageCaption }}
+    </div>
+
+    <div class="prevNext">
+        <div>
+            {% if page.previous.url %}
+            ←
+            <a class="prev" href="{{ page.previous.url | relative_url }}">{{page.previous.title}}</a>
+            {% endif %}
+        </div>
+        <div>
+            {% if page.next.url %}
+            <a class="next" href="{{ page.next.url | relative_url }}">{{page.next.title}}</a>
+            →
+            {% endif %}
+        </div>
+    </div>
+
     {{ content }}
 
     {% assign pagePath = page.path | split: "_posts/" %}
@@ -21,15 +82,33 @@ layout: customPost
     <div id="galleryMasonry">
         {% assign image_files = site.static_files | where: "image", true %}
         {% for image in image_files %}
-        {% if image.path contains filter %}
+        {% if image.path contains filter and image.path contains 'thumbnail'%}
         <div class="galleryImageWrapper">
-            <div class="galleryImageCropWrapper">
-                <a href="{{ image.path | relative_url }}">
+
+            {% assign fullResImage = image.path | replace: "thumbnails", "photos" %}
+
+            <div class="galleryImageCropWrapper" style="position: relative;">
+                <a href="{{ fullResImage | relative_url }}">
+                    <div class="highResImage" style="
+                                    display: none;
+                                    background: url('{{ fullResImage | relative_url }}'); 
+                                    background-size: cover;
+                                    position: absolute;
+                                    left: 0;
+                                    right: 0;
+                                    top: 0;
+                                    bottom: 0;
+                                    ">
+                    </div>
                     <img class="galleryImage" src="{{ image.path | relative_url }}" alt="image" />
                 </a>
             </div>
+
+
             <div class="galleryImageSubtitle">
-                {{ image.basename }}
+                <a href="{{ fullResImage | relative_url }}">
+                    View full
+                </a>
             </div>
         </div>
         {% endif %}

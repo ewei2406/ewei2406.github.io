@@ -41,7 +41,7 @@ show_excerpts: true
 
 defaults:
   - scope:
-      path: "photos"
+      path: "assets"
     values:
       image: true
 

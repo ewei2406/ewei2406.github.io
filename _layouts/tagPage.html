@@ -15,9 +15,13 @@ layout: default
         {% for post in site.posts %}
         {% if post.tags contains page.tag-name %}
         <li class="postRow">
+            {% assign postName = post.path | split: '/' %}
+            {% assign postName = postName[1] | split: "." | first %}
+
             <a class="post-link" href="{{ post.url | relative_url }}">
                 <div class="featuredImageThumbnailContainer">
-                    <img src="{{ post.featuredImage | relative_url }}" alt="">
+                    <img src="{{ 'assets/' | append: postName | append: '/thumbnails/' | append: post.featuredImage | relative_url }}"
+                        alt="">
                 </div>
             </a>
 
@@ -42,7 +46,6 @@ layout: default
                     {% endfor %}
                 </div>
             </div>
-
         </li>
         {% endif %}
         {% endfor %}
