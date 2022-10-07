@@ -14,6 +14,7 @@ layout: default
     {{ content }}
 
     {% assign image_files = site.static_files | where: "image", true %}
+    {% assign image_files = image_files | where_exp: "image", "image.path contains 'thumbnails'" %}
     {% assign n = image_files | size %}
     {% assign shuffled = image_files | sample: n %}
 
@@ -34,7 +35,7 @@ layout: default
 
             <div class="galleryImageCropWrapper" style="position: relative;">
                 <a href="{{ fullResImage | relative_url }}">
-                    <div class="highResImage" style="
+                    <!-- <div class="highResImage" style="
                                     display: none;
                                     background: url('{{ fullResImage | relative_url }}'); 
                                     background-size: cover;
@@ -44,7 +45,7 @@ layout: default
                                     top: 0;
                                     bottom: 0;
                                     ">
-                    </div>
+                    </div> -->
                     <img class="galleryImage" src="{{ image.path | relative_url }}" alt="image" />
                 </a>
             </div>
